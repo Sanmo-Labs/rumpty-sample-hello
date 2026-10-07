@@ -6,22 +6,26 @@
     <title>You're live on RumptyCloud</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
       :root {
         --ink: #f5efe4;
-        --ink-2: #d7cfc0;
-        --muted: #9a9183;
-        --accent: #59c2ff;
+        --ink-2: #c9c1b3;
+        --ink-3: #7d7568;
+        --accent: #59C2FF;
         --card: rgba(12, 15, 20, 0.74);
+        --font-display: "Bricolage Grotesque", "Space Grotesk", system-ui, sans-serif;
+        --font-body: "Space Grotesk", system-ui, sans-serif;
+        --font-mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
       }
       * { box-sizing: border-box; }
       html, body { margin: 0; min-height: 100%; }
       body {
         min-height: 100vh;
         color: var(--ink);
-        font-family: "Space Grotesk", system-ui, sans-serif;
+        font-family: var(--font-body);
         background: #10283a;
+        -webkit-font-smoothing: antialiased;
         overflow: hidden;
       }
       .sun {
@@ -130,8 +134,8 @@
         padding: 28px 20px 26vh;
       }
       .card {
-        width: min(100%, 400px);
-        padding: 28px;
+        width: min(100%, 520px);
+        padding: 32px;
         border: 1px solid rgba(245, 239, 228, 0.14);
         border-radius: 18px;
         background: var(--card);
@@ -139,22 +143,39 @@
         box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
       }
       .kicker {
-        margin: 0 0 10px;
-        font-family: ui-monospace, Menlo, monospace;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin: 0 0 16px;
+        font-family: var(--font-mono);
         font-size: 11px;
         letter-spacing: 0.14em;
         text-transform: uppercase;
-        color: var(--muted);
+        color: var(--ink-3);
+      }
+      .kicker::before {
+        content: "";
+        width: 24px;
+        height: 1px;
+        background: var(--accent);
       }
       h1 {
-        margin: 0 0 12px;
-        font-family: "Bricolage Grotesque", "Space Grotesk", sans-serif;
-        font-size: clamp(30px, 6vw, 40px);
-        line-height: 1.05;
-        letter-spacing: -0.04em;
+        margin: 0;
+        font-family: var(--font-display);
+        font-size: clamp(40px, 8vw, 64px);
+        line-height: 1;
+        font-weight: 700;
+        letter-spacing: -0.025em;
+        text-wrap: balance;
       }
-      h1 span { color: var(--accent); }
-      p { margin: 0; line-height: 1.55; color: var(--ink-2); }
+      h1 .cloud { color: var(--accent); }
+      .lede {
+        margin: 18px 0 0;
+        font-size: 17px;
+        line-height: 1.55;
+        color: var(--ink-2);
+        text-wrap: pretty;
+      }
     </style>
   </head>
   <body>
@@ -205,8 +226,8 @@
     <main class="shell">
       <div class="card">
         <p class="kicker">sample app</p>
-        <h1>You're live on <span>RumptyCloud</span></h1>
-        <p>This page was deployed from the official sample. Replace it with your own repo whenever you're ready.</p>
+        <h1>You're live on Rumpty<span class="cloud">Cloud</span>.</h1>
+        <p class="lede">This page was deployed from the official sample. Replace it with your own repo whenever you're ready.</p>
       </div>
     </main>
   </body>

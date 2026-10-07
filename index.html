@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>You are live on RumptyCloud</title>
+    <style>
+      :root { --bg:#0c0f14; --ink:#f5efe4; --muted:#8a8274; --accent:#59c2ff; --card:#11151c; --line:rgba(245,239,228,.1); }
+      * { box-sizing:border-box; }
+      body { margin:0; min-height:100vh; display:grid; place-items:center; background:var(--bg); color:var(--ink); font-family:ui-sans-serif,system-ui,sans-serif; }
+      main { width:min(100%, 32rem); padding:2rem; }
+      .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:2rem; }
+      p.kicker { margin:0 0 .75rem; font-size:.7rem; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); }
+      h1 { margin:0 0 .75rem; font-size:2rem; letter-spacing:-.04em; }
+      h1 span { color:var(--accent); }
+      p { margin:0; line-height:1.5; color:#c9c1b3; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="card">
+        <p class="kicker">sample app</p>
+        <h1>You are live on <span>RumptyCloud</span></h1>
+        <p>This page was deployed from the official sample. Replace it with your own repo whenever you are ready.</p>
+      </div>
+    </main>
+  </body>
+</html>
